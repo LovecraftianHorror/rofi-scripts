@@ -17,7 +17,11 @@ gen_list() {
 
 main() {
     # Pass the list to rofi
-    engine_name=$( (gen_list) | rofi -dmenu -fuzzy -only-match -p "$ENGINE_PROMPT" )
+    engine_name=$( (gen_list) | rofi -dmenu -fuzzy -columns $COLUMNS -p "$ENGINE_PROMPT" )
+
+    if [ "$?" -ne 0 ]; then
+        exit 1
+    fi
 
     if [ "$USE_ENGINE_FOR_QUERY_PROMPT" = true ]; then
         QUERY_PROMPT="$engine_name"
