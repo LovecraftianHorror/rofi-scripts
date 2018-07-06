@@ -15,6 +15,7 @@ Search your book collection with rofi.
 
 The MIT License (MIT)
 
+Modified 2018 Lovecraftian Horror
 Copyright (c) 2018 Miroslav Vidović
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

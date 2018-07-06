@@ -1,5 +1,6 @@
 MIT License
 
+Modified 2018 Lovecraftian Horror
 Copyright (c) 2017 Miroslav Vidović
 
 
