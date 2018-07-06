@@ -1,15 +1,10 @@
 # rofi-scripts
 
-##### A collection of scripts for [rofi](https://davedavenport.github.io/rofi/)
+A for using different search engines with [rofi](https://davedavenport.github.io/rofi/)
 
 ## web-search.sh
-Search the web with rofi by selecting a website and providing a query.
 
-## github-repos.sh
-Display all repositories connected with a GitHub user account in rofi and clone the selected repository.
-
-## books-search.sh
-Search your book collection with rofi.
+Search the web with rofi by selecting a website and providing a query. The websites and prompts are fully customizable.
 
 ## License
 
