@@ -17,7 +17,7 @@ gen_list() {
 
 main() {
     # Pass the list to rofi
-    engine_name=$( (gen_list) | rofi -dmenu -matching fuzzy -columns $COLUMNS -p "$ENGINE_PROMPT" )
+    engine_name=$( (gen_list) | rofi -dmenu -no-custom -matching fuzzy -columns $COLUMNS -p "$ENGINE_PROMPT" )
 
     if [ "$?" -ne 0 ]; then
         exit 1
