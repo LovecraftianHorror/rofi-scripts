@@ -11,22 +11,26 @@ fi
 gen_list() {
     for i in "${!ENGINES[@]}"
     do
-      echo "$i"
+        echo "$i"
     done
 }
 
 main() {
-  # Pass the list to rofi
-    engine_name=$( (gen_list) | rofi -dmenu -fuzzy -only-match -location 0 -p "Search > " )
+    # Pass the list to rofi
+    engine_name=$( (gen_list) | rofi -dmenu -fuzzy -only-match -location 0 -p "$ENGINE_PROMPT" )
 
-    query=$( (echo ) | rofi  -dmenu -fuzzy -location 0 -p "Query > " )
+    if [ "$USE_ENGINE_FOR_QUERY_PROMPT" = true ]; then
+        QUERY_PROMPT="$engine_name"
+    fi
+
+    query=$( (echo ) | rofi  -dmenu -fuzzy -location 0 -p "$QUERY_PROMPT" )
     if [[ -n "$query" ]]; then
-        url=${ENGINES[$engine_name]}$query
+        url="${ENGINES[$engine_name]}$query"
         xdg-open "$url"
-    else 
+    else
         rofi -show -e "No query provided."
     fi
 }
 
-main 
+main
 exit 0
