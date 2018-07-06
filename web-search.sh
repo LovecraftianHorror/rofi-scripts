@@ -17,7 +17,7 @@ gen_list() {
 
 main() {
     # Pass the list to rofi
-    engine_name=$( (gen_list) | rofi -dmenu -fuzzy -columns $COLUMNS -p "$ENGINE_PROMPT" )
+    engine_name=$( (gen_list) | rofi -dmenu -matching fuzzy -columns $COLUMNS -p "$ENGINE_PROMPT" )
 
     if [ "$?" -ne 0 ]; then
         exit 1
@@ -27,7 +27,7 @@ main() {
         QUERY_PROMPT="$engine_name"
     fi
 
-    query=$( (echo ) | rofi -dmenu -fuzzy -lines 0 -p "$QUERY_PROMPT" )
+    query=$( (echo ) | rofi -dmenu -lines 0 -p "$QUERY_PROMPT" )
     if [[ -n "$query" ]]; then
         url="${ENGINES[$engine_name]}$query"
         xdg-open "$url"
