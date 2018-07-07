@@ -1,10 +1,8 @@
-# rofi-scripts
+## rof-web-searcher
 
-A for using different search engines with [rofi](https://davedavenport.github.io/rofi/)
+This is a fork of Miroslav's [rofi-scripts](https://github.com/miroslavvidovic/rofi-scripts) for [rofi](https://github.com/DaveDavenport/rofi).
 
-## web-search.sh
-
-Search the web with rofi by selecting a website and providing a query. The websites and prompts are fully customizable.
+It gives you the ability to use several search engines through rofi by picking the search engine then typing your query which will open the result in your default web browser. You can also specify your own search engines fit your personal use.
 
 ## License
 
