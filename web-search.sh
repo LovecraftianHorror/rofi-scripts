@@ -8,6 +8,10 @@ fi
 # Source the config
 . ./web-search.cfg
 
+if [ "$CASE_SENSITIVE" = false ]; then
+    EXTRA_FLAGS="-i"
+fi
+
 # List for rofi
 gen_list() {
     for i in "${!ENGINES[@]}"
@@ -20,6 +24,7 @@ main() {
     # Pass the list to rofi
     engine_name=$( (gen_list) | rofi -dmenu              \
                                      -no-custom          \
+                                     $EXTRA_FLAGS        \
                                      -matching fuzzy     \
                                      -columns $COLUMNS   \
                                      -p "$ENGINE_PROMPT" \
