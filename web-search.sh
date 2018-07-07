@@ -5,6 +5,7 @@ if [ ! -f web-search.cfg ]; then
     exit 1
 fi
 
+# Source the config
 . ./web-search.cfg
 
 # List for rofi
@@ -24,6 +25,8 @@ main() {
                                      -p "$ENGINE_PROMPT" \
     )
 
+    # Monkey See, Monkey do (Check for non-zero exit code, use non-zero exit
+    # code)
     if [ "$?" -ne 0 ]; then
         exit 1
     fi
