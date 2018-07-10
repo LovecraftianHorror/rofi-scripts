@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
 
-if [ ! -f web-search.cfg ]; then
+# TODO:
+# * Break up everything into different functions
+# * Move everything that runs directly into main
+
+if [ ! -f "$DIR/web-search.cfg" ]; then
     echo "Error: could not find config 'web-search.cfg' when launching web-search.sh"
     exit 1
 fi
 
 # Source the config
-. ./web-search.cfg
+. "$DIR/web-search.cfg"
 
 # Set default configs if variable doesn't exist
 if [ -z ${var+ENGINE_PROMPT} ]; then
