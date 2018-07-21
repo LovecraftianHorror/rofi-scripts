@@ -5,9 +5,8 @@
 # * Move everything that runs directly into main
 
 DIR="`dirname $0`"
-echo "$DIR"
 if [ ! -f "$DIR/web-search.cfg" ]; then
-    echo "Error: could not find config 'web-search.cfg' when launching web-search.sh"
+    rofi -show -e "Error: could not find config 'web-search.cfg' when launching web-search.sh"
     exit 1
 fi
 
