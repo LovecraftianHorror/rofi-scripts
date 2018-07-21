@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # TODO:
-# * Break up everything into different functions
-# * Move everything that runs directly into main
+# * Make arg for specifying engine with a flag so that I can skip that step
 
 DIR="`dirname $0`"
 if [ ! -f "$DIR/web-search.cfg" ]; then
@@ -14,27 +13,27 @@ fi
 . "$DIR/web-search.cfg"
 
 # Set default configs if variable doesn't exist
-if [ -z ${var+ENGINE_PROMPT} ]; then
+if [ ! -v ENGINE_PROMPT ]; then
     ENGINE_PROMPT="Engine"
 fi
 
-if [ -z ${var+USE_ENGINE_FOR_QUERY_PROMPT} ]; then
+if [ ! -v USE_ENGINE_FOR_QUERY_PROMPT ]; then
     USE_ENGINE_FOR_QUERY_PROMPT=true
 fi
 
-if [ -z ${var+ENGINE_QUERY_PROMPT_APPEND} ]; then
+if [ ! -v ENGINE_QUERY_PROMPT_APPEND ]; then
     ENGINE_QUERY_PROMPT_APPEND=": "
 fi
 
-if [ -z ${var+QUERY_PROMPT} ]; then
+if [ ! -v QUERY_PROMPT ]; then
     QUERY_PROMPT="Query"
 fi
 
-if [ -z ${var+COLUMNS} ]; then
+if [ ! -v COLUMNS ]; then
     COLUMNS=1
 fi
 
-if [ -z ${var+CASE_SENSITIVE} ]; then
+if [ ! -v CASE_SENSITIVE ]; then
     CASE_SENSITIVE=false
 fi
 
